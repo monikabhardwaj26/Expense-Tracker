@@ -1,0 +1,15 @@
+Django>=5.0,<6.0
+djangorestframework>=3.15
+django-cors-headers>=4.3
+python-decouple>=3.8
+
+# AI Financial Advisor (ai app) — calls Anthropic's API from the backend only.
+anthropic>=0.34
+
+# Receipt scanning (receipts app) — OCR. pytesseract is a thin wrapper
+# around the system 'tesseract-ocr' binary, which pip cannot install for
+# you. See README.md "Receipt scanning setup" before relying on this
+# feature — without both pieces installed, scanning fails safely and the
+# UI falls back to manual entry, it does not crash.
+Pillow>=10.0
+pytesseract>=0.3.10
