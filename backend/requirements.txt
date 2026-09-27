@@ -13,3 +13,4 @@ anthropic>=0.34
 # UI falls back to manual entry, it does not crash.
 Pillow>=10.0
 pytesseract>=0.3.10
+gunicorn
