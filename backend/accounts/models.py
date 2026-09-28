@@ -1,14 +1,14 @@
+from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
-class UserManager(models.Manager):
+class UserManager(BaseUserManager):
     """Manager that creates users with email as the login field."""
 
     def create_user(self, email, name, password=None, **extra_fields):
         if not email:
             raise ValueError('Users must have an email address')
-        email = self.model.normalize_email(email)
+        email = self.normalize_email(email)py
         user = self.model(email=email, name=name, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
